@@ -44,6 +44,7 @@ class MainActivity : ComponentActivity() {
                    // PointerEvents()
                     Tap()
                     Drag_Horizontal()
+                    Drag_Vertical()
                 }
             }
         }
@@ -167,6 +168,21 @@ fun Drag_Horizontal() {
                 orientation= Orientation.Horizontal,
                 state = rememberDraggableState{ delta ->
                     offsetX += delta
+                }
+            )
+    )
+}
+@Composable
+fun Drag_Vertical() {
+    var offsetY by remember { mutableStateOf(0f) }
+    Text(
+        text = "垂直拖曳",
+        modifier = Modifier
+            .offset { IntOffset(600, offsetY.toInt() + 180) }
+            .draggable(
+                orientation= Orientation.Vertical,
+                state = rememberDraggableState{ delta ->
+                    offsetY += delta
                 }
             )
     )
