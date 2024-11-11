@@ -43,6 +43,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                    // PointerEvents()
                     Tap()
+                    Drag_Horizontal()
                 }
             }
         }
@@ -161,7 +162,7 @@ fun Drag_Horizontal() {
     Text(
         text = "水平拖曳",
         modifier = Modifier
-            .offset { IntOffset(offsetX.toInt(), 130) }
+            .offset { IntOffset(offsetX.toInt(), 215) }
             .draggable(
                 orientation= Orientation.Horizontal,
                 state = rememberDraggableState{ delta ->
