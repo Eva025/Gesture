@@ -45,6 +45,7 @@ class MainActivity : ComponentActivity() {
                     Tap()
                     Drag_Horizontal()
                     Drag_Vertical()
+                    Ghost()
                 }
             }
         }
@@ -187,3 +188,17 @@ fun Drag_Vertical() {
             )
     )
 }
+@Composable
+fun Ghost(){
+    Image(
+        painter = painterResource(id = R.drawable.ghost2),
+        contentDescription = "精靈2" ,
+        modifier = Modifier
+                .offset { IntOffset(800, 200) })
+    Image(
+        painter = painterResource(id = R.drawable.ghost3),
+        contentDescription = "精靈3" ,
+        modifier = Modifier
+            .offset { IntOffset(900, 500) })
+}
+
